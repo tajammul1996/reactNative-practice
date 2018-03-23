@@ -6,7 +6,8 @@ import {
   View,
   TextInput,
   Button,
-  TouchableOpacity
+  TouchableOpacity,
+  ImageBackground
 } from 'react-native';
 
 export default class App extends Component{
@@ -18,17 +19,18 @@ export default class App extends Component{
 
   render() {
     return (
-      <View style={styles.container}>
+      <ImageBackground style={styles.container} source={require('./images/abstractwp.jpg')}>
       <Text style={styles.headingStyle}>Register</Text>
         <View style= {styles.inputContainer}>
-          <TextInput placeholder="Full name" style={styles.input} underlineColorAndroid="transparent"/>
-          <TextInput placeholder="Email" style={styles.input}/>
-          <TextInput placeholder="Password" style={styles.input} secureTextEntry />
+          <TextInput placeholder="Full name" style={styles.input} underlineColorAndroid="transparent" placeholderTextColor="white"
+/>
+          <TextInput placeholder="Email" style={styles.input} placeholderTextColor="white"/>
+          <TextInput placeholder="Password" style={styles.input} secureTextEntry  placeholderTextColor="white"/>
         </View>       
         <TouchableOpacity style={styles.buttonContainer}>
           <Text style={styles.textStyle}>Lets go</Text>
         </TouchableOpacity>
-      </View>
+      </ImageBackground>
     );
   }
 }
@@ -44,9 +46,9 @@ const styles = StyleSheet.create({
   },
   input : {
     width: '100%',
-    height: 40,
-    borderColor: 'steelblue',
-    borderWidth: 1,
+    height: 35,
+    borderColor: 'white',
+    borderWidth: 1.1,
     padding: 10,
     margin: 5,
     borderRadius: 15,
@@ -54,23 +56,25 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
 
-    backgroundColor: '#d6d7da',
+    backgroundColor: 'steelblue',
     padding:5,
     borderColor: 'powderblue',
     borderWidth: 1,
     width: '60%',
     borderRadius: 10,
     margin: 10,
-    height: 35
+    height: 35.
+
   },
   textStyle:{
     textAlign: 'center',
+    color: '#fff'
   },
   headingStyle: {
     fontFamily: 'helvetica',
     fontSize: 30,
     fontWeight: 'bold',
-    color: 'steelblue',
+    color: 'white',
     padding: 5
   }
 });
