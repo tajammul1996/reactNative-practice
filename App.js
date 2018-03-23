@@ -3,18 +3,29 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  TextInput,
+  Button
 } from 'react-native';
 
 export default class App extends Component{
+
+  changeName = (event) => {
+    alert(event);
+    console.log(event.target)
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.internalWrapper}>
-          <View style= {styles.firstbox}>
-            <Text style={styles.textStyle}>firstbox</Text>
-          </View>
+      <Text>Register</Text>
+        <View style= {styles.inputContainer}>
+          <TextInput placeholder="Full name" style={styles.input} onChangeText={this.changeName} />
+          <TextInput placeholder="Email" style={styles.input}/>
+          <TextInput placeholder="Password" style={styles.input}/>
+          <Button title="Lets go"/>
         </View>
+        
       </View>
     );
   }
@@ -23,33 +34,14 @@ export default class App extends Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // flexDirection: 'row',
-    // justifyContent: 'space-between',
-    // alignItems: 'center' ,
-    backgroundColor: '#FFF',
-    backgroundColor: 'powderblue'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  
-  internalWrapper: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start'
+  inputContainer: {
+    width: '80%'
   },
-
-  firstbox: {
-    flex:1,
-    flexDirection: 'row',
-    borderColor: 'black',
-    backgroundColor: 'steelblue',
-    borderWidth: 0.5,
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    // alignItems: 'center',
-  },
-
-  textStyle: {
-    color: '#fff',
-    padding: 15,
+  input : {
+    width: '100%',
+    height: 40
   }
 });
