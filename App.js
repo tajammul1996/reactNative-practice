@@ -10,22 +10,18 @@ import {
   ImageBackground
 } from 'react-native';
 
-export default class App extends Component{
+import DefaultInput from './components/UI/DefaultInput/DefaultInput'
 
-  // changeName = (event) => {
-  //   alert(event);
-  //   console.log(event.target)
-  // }
+export default class App extends Component{
 
   render() {
     return (
       <ImageBackground style={styles.container} source={require('./images/abstractwp.jpg')}>
       <Text style={styles.headingStyle}>Register</Text>
         <View style= {styles.inputContainer}>
-          <TextInput placeholder="Full name" style={styles.input} underlineColorAndroid="transparent" placeholderTextColor="white"
-/>
-          <TextInput placeholder="Email" style={styles.input} placeholderTextColor="white"/>
-          <TextInput placeholder="Password" style={styles.input} secureTextEntry  placeholderTextColor="white"/>
+          <DefaultInput placeholder='Username' />
+          <DefaultInput placeholder='Email' />
+          <DefaultInput placeholder='Password' />
         </View>       
         <TouchableOpacity style={styles.buttonContainer}>
           <Text style={styles.textStyle}>Lets go</Text>
