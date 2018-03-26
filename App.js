@@ -16,17 +16,19 @@ export default class App extends Component{
 
   render() {
     return (
-      <ImageBackground style={styles.container} source={require('./images/abstractwp.jpg')}>
-      <Text style={styles.headingStyle}>Register</Text>
-        <View style= {styles.inputContainer}>
-          <DefaultInput placeholder='Username' />
-          <DefaultInput placeholder='Email' />
-          <DefaultInput placeholder='Password' />
-        </View>       
-        <TouchableOpacity style={styles.buttonContainer}>
-          <Text style={styles.textStyle}>Lets go</Text>
-        </TouchableOpacity>
-      </ImageBackground>
+      <View style={styles.container}>
+        <Text>Hello</Text>
+        <View style={styles.internalContainer}>
+          <View  style={styles.textStyle}>
+            <Text>hi</Text>
+            <Text>hello</Text>
+            <Text>there</Text>
+            <Text>this</Text>
+            <Text>is</Text>
+            <Text>cs50</Text>
+          </View>
+        </View>
+      </View>
     );
   }
 }
@@ -35,42 +37,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderWidth: 3,
+    borderColor: '#af33ff',
   },
-  inputContainer: {
-    width: '80%'
-  },
-  input : {
+  internalContainer: {
+    
+    height: '10%',
     width: '100%',
-    height: 35,
-    borderColor: 'white',
-    borderWidth: 1.1,
-    padding: 10,
-    margin: 5,
-    borderRadius: 15,
-    textAlign: 'center'
+    flexDirection: 'row',
+    
   },
-  buttonContainer: {
 
-    backgroundColor: 'steelblue',
-    padding:5,
-    borderColor: 'powderblue',
-    borderWidth: 1,
-    width: '60%',
-    borderRadius: 10,
-    margin: 10,
-    height: 35.
-
-  },
-  textStyle:{
-    textAlign: 'center',
-    color: '#fff'
-  },
-  headingStyle: {
-    fontFamily: 'helvetica',
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: 'white',
-    padding: 5
+  textStyle : {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    
   }
 });
