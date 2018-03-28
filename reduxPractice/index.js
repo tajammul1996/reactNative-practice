@@ -1,7 +1,7 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { AppRegistry } from 'react-native';
 import App from './App';
-import { Provider } from 'react-redux';
 import store from './src/store/configureStore'
 
 
@@ -11,4 +11,4 @@ const RNRedux = () => (
     </Provider>
 );
 
-AppRegistry.registerComponent('styleMaster', () => RNRedux);
+AppRegistry.registerComponent('reduxPractice', () => RNRedux);
