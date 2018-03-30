@@ -1,1 +1,0 @@
-export { increment, decrement, reset, changeText } from './valueCounter';
